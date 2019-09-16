@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import frc.robot.commands.PursueTarget;
 import frc.robot.commands.RollIntake;
 import frc.robot.commands.SwitchExtend;
 import frc.robot.commands.SwitchRetract;
@@ -53,10 +54,11 @@ public class OI {
 		driveStick = new Joystick(0);
 		secondStick = new Joystick(1);
 
-		new JoystickButton(secondStick, Button.A.getBtnNumber()).whenPressed(new SwitchExtend());
-		new JoystickButton(secondStick, Button.Y.getBtnNumber()).whenPressed(new SwitchRetract());
-		new JoystickButton(secondStick, Button.LBumper.getBtnNumber()).whileHeld(new RollIntake(0.4, true));
-		new JoystickButton(secondStick, Button.B.getBtnNumber()).whileHeld(new RollIntake(0.4, false));
+		new JoystickButton(driveStick, Button.A.getBtnNumber()).whenPressed(new SwitchExtend());
+		new JoystickButton(driveStick, Button.Y.getBtnNumber()).whenPressed(new SwitchRetract());
+		new JoystickButton(driveStick, Button.X.getBtnNumber()).whileHeld(new RollIntake(-0.4, true));
+		new JoystickButton(driveStick, Button.B.getBtnNumber()).whileHeld(new RollIntake(0.4, false));
+		new JoystickButton(driveStick, Button.LBumper.getBtnNumber()).whenPressed(new PursueTarget());
 		
 	}
 }

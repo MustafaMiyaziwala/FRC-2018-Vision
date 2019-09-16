@@ -19,6 +19,7 @@ import frc.robot.OI;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.SwitchArm;
+import frc.robot.utils.Limelight;
 
 
 /**
@@ -33,6 +34,7 @@ public class Robot extends TimedRobot {
 	public static DriveTrain driveTrain;
 	public static SwitchArm switchArm;
 	public static Intake intake;
+	public static Limelight limelight;
 	public static OI oi;
 
 	Command m_autonomousCommand;
@@ -44,6 +46,7 @@ public class Robot extends TimedRobot {
 		driveTrain = new DriveTrain();
 		switchArm = new SwitchArm();
 		intake = new Intake();
+		limelight = new Limelight();
 		oi = new OI();
 		
 		SmartDashboard.putData("Auto", m_chooser);

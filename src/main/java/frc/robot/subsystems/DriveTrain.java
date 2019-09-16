@@ -17,7 +17,6 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-
 /**
  * An example subsystem. You can replace me with your own Subsystem.
  */
@@ -28,8 +27,6 @@ public class DriveTrain extends Subsystem {
 	DifferentialDrive m_drive;
 
 	public DriveTrain() {
-		
-		
 		leftFront = new WPI_TalonSRX(RobotMap.leftFrontDriveMotor);
 		leftBack = new WPI_TalonSRX(RobotMap.leftBackDriveMotor);
 		rightFront = new WPI_TalonSRX(RobotMap.rightFrontDriveMotor);
